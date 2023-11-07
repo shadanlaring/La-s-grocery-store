@@ -1,0 +1,96 @@
+print("Welcome to La's Grocery!")
+grocery = {'onion': '3', 'tv': '200', 'potatoes': '2', 'carrots': '1', 'chicken': '5', 'beef': '6', 'pork': '4'}
+import pprint
+
+print(pprint.pprint(grocery))
+bill = 0
+def print_me(**grocery):
+    global bill
+    global new_pick
+    print(f"The price of {pick} is $"+grocery['bills'])
+    try:
+
+        num1 = int(input(f"How many {pick} would you like? "))
+
+
+        if pick == 'onion':
+            onion_bill=int(num1)*3
+            bill += onion_bill
+        elif pick == 'tv':
+            tv_bill = int(num1)*200
+            bill += tv_bill
+        elif pick == 'potatoes':
+            potatoes_bill = int(num1)*2
+            bill += potatoes_bill
+        elif pick == 'carrots':
+            carrots_bill = int(num1)*1
+            bill += carrots_bill
+        elif pick == 'chicken':
+            chicken_bill = int(num1)*5
+            bill += chicken_bill
+        elif pick == 'beef':
+            beef_bill = int(num1)*6
+            bill += beef_bill
+        elif pick == 'pork':
+            pork_bill = int(num1)*4
+            bill += pork_bill
+        else:
+            print("You did not pick an item!")
+    except:
+        print("We don't sell fraction of items.")
+    new_pick = input("Would you like to add more items? ").lower()
+
+while grocery.keys():
+
+    pick = input("What would you like to buy today? ").lower()
+    if pick == 'onion':
+        print_me(bills = '3')
+        if new_pick == 'yes':
+            continue
+        else:
+            break
+    elif pick == 'tv':
+        print_me(bills = '200')
+        if new_pick == 'yes':
+            continue
+        else:
+            break
+    elif pick == 'potatoes':
+        print_me(bills = '2')
+        if new_pick == 'yes':
+            continue
+        else:
+            break
+    elif pick == 'carrots':
+        print_me(bills='1')
+        if new_pick == 'yes':
+            continue
+        else:
+            break
+    elif pick == 'chicken':
+        print_me(bills = '5')
+        if new_pick == 'yes':
+            continue
+        else:
+            break
+    elif pick == 'beef':
+        print_me(bills = '6')
+        if new_pick == 'yes':
+            continue
+        else:
+            break
+    elif pick == 'pork':
+        print_me(bills = '4')
+        if new_pick == 'yes':
+            continue
+        else:
+            break
+    else:
+        print("You did not pick an item on the list")
+
+b_tax = bill * 1.0825
+print(f"Your total bill is ${b_tax:.2f} dollars.")
+
+print("Thank You for purchasing!")
+
+
